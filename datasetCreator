@@ -28,6 +28,8 @@ catch( PDOException $e )
 $sql = 'SHOW TABLES';
 $result = $db->query( $sql );
 
+echo "<dataset>\n";
+
 foreach( $result as $table )
 {
 	
@@ -55,12 +57,14 @@ foreach( $result as $table )
 			}
 			
 			$lines = explode( "\n", $xml->asXML( ) );
-			echo $lines[1] ."\n";
+			echo '  ' . $lines[1] ."\n";
 			
 		}
 		
 	}
 	
 }
+
+echo "</dataset>\n";
 
 ?>
